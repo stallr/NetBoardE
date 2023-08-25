@@ -27,8 +27,6 @@ Finally ,install pnpm.This is [pnpm tutorial](https://doc.houdunren.com/效率�
 
 And dont forget to write down your panel(V2board) in src/renderer/config.json.
 
-# config.json
-
 ### Install
 
 ```bash
