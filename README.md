@@ -25,6 +25,10 @@ Second,If you have difficulty accessing the official repository, please install 
 
 Finally ,install pnpm.This is [pnpm tutorial](https://doc.houdunren.com/效率提升/7.1 pnpm.html)
 
+And dont forget to write down your panel(V2board) in src/renderer/config.json.
+
+# config.json
+
 ### Install
 
 ```bash
