@@ -4,6 +4,10 @@ A WindowGUI based on Clash and Electron.
 
 An Electron application with Vue,Pinia,VueRouter and Elemenet-Plus.
 
+![image-20230826105850963](README.assets/image-20230826105850963.png)
+
+Here is the picture of netboard.
+
 ## Group
 
 Telegram:https://t.me/TalkToJshi
