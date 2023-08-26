@@ -3,3 +3,4 @@ dist
 out
 *.log*
 .vscode
+resources/config.yaml

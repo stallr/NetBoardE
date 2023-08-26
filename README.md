@@ -4,6 +4,8 @@ A WindowGUI based on Clash and Electron.
 
 An Electron application with Vue,Pinia,VueRouter and Elemenet-Plus.
 
+Support V2board and Metron.
+
 ![image-20230826105850963](README.assets/image-20230826105850963.png)
 
 Here is the picture of netboard.
@@ -29,7 +31,19 @@ Second,If you have difficulty accessing the official repository, please install 
 
 Finally ,install pnpm.This is [pnpm tutorial](https://doc.houdunren.com/效率提升/7.1 pnpm.html)
 
-And dont forget to write down your panel(V2board) in src/renderer/config.json.
+And dont forget to write down your panel in src/renderer/config.json.
+
+```json
+{
+	"panelUrl":"https://你的网址",
+	"panelType":"v2board or metron"
+}
+
+```
+
+if you are metron, please rename" src/renderer/components/metron" to "src/renderer/components/panel".
+
+if you are v2board please rename" src/renderer/components/v2board " to "src/renderer/components/panel".
 
 ### Install
 
