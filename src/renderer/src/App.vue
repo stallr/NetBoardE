@@ -11,7 +11,7 @@ window.addEventListener("clashCommunicateError",(e)=>{
 	console.log("clashCommunicateError",e)
 })
 window.addEventListener("apiCommunicateError",(e)=>{
-  console.log("apiCommunicateError")
+  console.log("apiCommunicateError",e)
 	RequestError.status = true;
 	if (e.e.response) {
 		RequestError.reason = e.e.response.data.message;

@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPersist  from 'pinia-plugin-persistedstate'
+import Config from "../config.json"
 import App from './App.vue'
 import Index from './components/index.vue'
 import Nodes from './components/nodes.vue'
@@ -34,3 +35,4 @@ pinia.use(piniaPersist)
 app.use(pinia);
 app.use(router);
 app.mount('#app');
+app.provide("panel",Config.panelType);

@@ -29,7 +29,7 @@
 </template>
 <script setup>
 	import {ref,onBeforeMount} from "vue"
-	import implement from "../v2board/implement.js"
+	import implement from "../panel/implement.js"
 	const status =  ref();
 	onBeforeMount(()=>{
 		implement.getStatus(status);	

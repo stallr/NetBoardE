@@ -19,7 +19,6 @@
 	import controllbtn from "./index/btn.vue"
 	import node from "./index/node.vue"
 	import slicklist from "./index/slicklist.vue"
-	import info from "../v2board/info.js"
 	import {useCoreStore} from "../store/CoreStore.cjs"
 	const CoreStore = new useCoreStore(); 
 </script>

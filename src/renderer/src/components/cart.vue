@@ -3,9 +3,9 @@
 		<el-scrollbar height="calc(100vh - 100px)">
 		<div class="cartshow">
 			<cartitem v-for="singleplan in  plans" :plan="singleplan"></cartitem>
-		</div>			  
+		</div>
 		</el-scrollbar>
-	
+
 	</keep-alive>
 
 </template>
@@ -13,13 +13,13 @@
 <script setup>
 	import {ref,onBeforeMount} from "vue"
 	import cartitem from "./cartitem.vue"
-	import implement from "../v2board/implement.js"
+	import implement from "../panel/implement.js"
 	const plans =  ref();
 	onBeforeMount(()=>{
-		implement.getPlan(plans);	
+		implement.getPlan(plans);
 	})
 
-	
+
 </script>
 
 <style scoped>

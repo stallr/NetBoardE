@@ -21,7 +21,11 @@ const api = {
   minimize:()=>{
   	ipcRenderer.send("minimize")
   },
+axios: (config) => {
+  return ipcRenderer.invoke("axios", config)
 }
+}
+
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

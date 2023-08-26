@@ -8,6 +8,7 @@ import {createWindow} from './Utils/CreateWindow.js';
 import {createTray} from './Utils/Tray.js'
 import {startServer,stopServer} from "./Core/StartService.js";
 import {getConfig,writeSub} from "./Core/getConfig.js";
+import axios from 'axios';
 
 app.whenReady().then(() => {
   // Set app user model id for windows
@@ -15,9 +16,7 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
-
   const mainWindow = createWindow();
-  console.log(mainWindow);
   app.on('activate', () =>{
     if (BrowserWindow.getAllWindows().length === 0){
       mainWindow = createWindow();
@@ -51,6 +50,15 @@ ipcMain.on('hide', (event) => {
   const win = BrowserWindow.fromWebContents(event.sender)
   win.hide();
 });
-
+ipcMain.handle("axios", async (event, config) => {
+  let req = Object.create(config)
+  console.log(config);
+  try {
+    const response = await axios.request({ url: req.url, method: req.method,data:req.data })
+    return response.data
+  } catch (error) {
+    throw new Error(error.message)
+  }
+})
 
 

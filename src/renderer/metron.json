@@ -1,0 +1,31 @@
+{
+  "plan": [{
+      "id": 1,
+      "group_id": 1,
+      "transfer_enable": 256,
+      "name": "名字1",
+      "content": "描述1",
+      "month_price": null,
+      "quarter_price": null,
+      "half_year_price": null,
+      "year_price": 12000,
+      "two_year_price": null,
+      "three_year_price": null,
+      "onetime_price": null
+    },
+    {
+      "id": 2,
+      "group_id": 1,
+      "transfer_enable": 128,
+      "name": "名字2",
+      "content": "描述2",
+      "month_price": null,
+      "quarter_price": null,
+      "half_year_price": null,
+      "year_price": 12000,
+      "two_year_price": null,
+      "three_year_price": null,
+      "onetime_price": null
+    }
+  ]
+}

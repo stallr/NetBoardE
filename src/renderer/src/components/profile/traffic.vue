@@ -12,13 +12,13 @@
 			<span>总流量：{{((UserStore.sub.transfer_enable)/(1024*1024*1024)).toFixed(2)}}G</span>
 		</div>
 		<div class="progress">
-			<span class="used">{{((UserStore.sub.d)/(1024*1024*1024)).toFixed(2)}} GB/ 
+			<span class="used">{{((UserStore.sub.d)/(1024*1024*1024)).toFixed(2)}} GB/
 			{{((UserStore.sub.transfer_enable)/(1024*1024*1024)).toFixed(2)}} GB</span>
-			<el-progress  
-			:stroke-width="15" 
+			<el-progress
+			:stroke-width="15"
 			:percentage="((UserStore.sub.d)/(1024*1024*1024)).toFixed(2)"
 			:show-text="false"
-			:color="customColorMethod"/>			
+			:color="customColorMethod"/>
 		</div>
 
 	</el-card>
@@ -28,9 +28,6 @@
 	import {ref,onBeforeMount} from "vue"
 	import {useUserStore} from "../../store/UserStore.js"
 	const UserStore=useUserStore();
-	// import implement from "../../v2board/implement.js"
-	// const sub =  ref();
-	// await implement.getSub(sub);	
 	const customColorMethod = (percentage) => {
 	  if (percentage >= 100) {
 	    return '#909399'
@@ -42,14 +39,18 @@
 	  return '#67c23a'
 	}
 	const daysBetween = (expired)=>{
-		let current = new Date().getTime();
-		let timespan = expired*1000-current;
-		return Math.floor(timespan / (24 * 3600 * 1000));
+    if(Number.isInteger(expired)){
+      let current = new Date().getTime();
+      let timespan = expired*1000-current;
+      return Math.floor(timespan / (24 * 3600 * 1000));
+    }
+    return expired;
+
 	}
 </script>
 
 <style scoped>
-	
+
 	.mysub{
 		font-weight: 500;
 		font-size: 32px;
@@ -90,7 +91,7 @@
 		margin-top: 10px;
 		gap: 8px;
 	}
-	
+
 	.used{
 		align-self: flex-start;
 		font-size: 12px;

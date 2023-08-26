@@ -8,7 +8,7 @@
 
 <script setup>
 	import {reactive,ref} from 'vue'
-	import implement from '../../v2board/implement.js'
+	import implement from "../../panel/implement.js"
 	import { ElNotification } from 'element-plus'
 	import {useUserStore} from "../../store/UserStore.js"
 	const UserStore=useUserStore();
@@ -23,16 +23,17 @@
 			isLoading.value = false;
 			if(status){
 				localStorage.setItem("Authorization",res.auth_data);
+        console.log("Authorization",res.auth_data)
 				setTimeout(()=>{
 					window.location.reload();
 				},2000)
 			}else{
 				alert("登录失败！"+res.data.message) ;
 			}
-			
+
 		})
 	}
-	
+
 </script>
 
 <style scoped>
@@ -43,15 +44,15 @@
 		justify-content: center;
 		flex-direction: column;
 	}
-	
+
 	.el-form-item {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-	
+
 	}
-	
+
 	.el-button {
 		justify-content: center;
 		align-items: center;
@@ -82,7 +83,7 @@
 		-webkit-appearance: button;
 		width: 80%;
 	}
-	
+
 	.el-input {
 		justify-content: center;
 		align-items: center;

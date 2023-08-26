@@ -15,21 +15,21 @@
 					  >{{statusDetail(scope.row.status)}}
 				</el-tag>
 			</template>
-		</el-table-column>			
+		</el-table-column>
 		<el-table-column prop="created_at" label="创建时间" width="250">
 			<template #default="scope">
 				{{timeFormat(scope.row.created_at)}}
 			</template>
-		</el-table-column>			
+		</el-table-column>
 		<el-table-column prop="total_amount" label="金额" >
 			<template #default="scope">
 				{{(scope.row.total_amount)/100}}
 			</template>
-		</el-table-column>			
+		</el-table-column>
 		<el-table-column label="操作">
 		  <template #default="scope">
 			<el-button  v-if = "scope.row.status === 3"
-			size="small" 
+			size="small"
 			@click="handleDetail(scope.$index, scope.row)"
 			  >查看详情</el-button
 			>
@@ -46,16 +46,16 @@
 </template>
 <script setup>
 	import {ref,onBeforeMount} from "vue"
-	import implement from "../v2board/implement.js"
+	import implement from "../panel/implement.js"
 	const orders =  ref();
 	onBeforeMount(()=>{
-		implement.getOrder(orders);	
+		implement.getOrder(orders);
 	});
 	const handleDetail = (index,row)=>{
-		
+
 	}
 	const handleCancle = (index,row)=>{
-		
+
 	}
 	const periodDetail = (period)=>{
 		let detail = "";
