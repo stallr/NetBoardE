@@ -60,5 +60,12 @@ ipcMain.handle("axios", async (event, config) => {
     throw new Error(error.message)
   }
 })
+ipcMain.handle('drag',(event,opt)=>{
+
+  const win = BrowserWindow.fromWebContents(event.sender);
+
+  const {height,width} = win.getBounds();
+  win.setBounds(opt);
+})
 
 

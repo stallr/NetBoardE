@@ -16,7 +16,7 @@ const createWindow = ()=>{
     },
 
   })
-
+  // mainWindow.setAspectRatio(1020/690);
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })

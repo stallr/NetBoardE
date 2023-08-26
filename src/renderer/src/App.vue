@@ -6,6 +6,8 @@ import controllbtn from "./components/app/controllBtn.vue"
 import error from "./components/error.vue"
 import login from "./components/login.vue"
 import {ref,reactive} from 'vue'
+import useDrag from './Drag.js'
+useDrag.run();
 const RequestError = reactive({"status":false,"reason":"","isLogin":true})
 window.addEventListener("clashCommunicateError",(e)=>{
 	console.log("clashCommunicateError",e)

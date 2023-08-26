@@ -21,9 +21,12 @@ const api = {
   minimize:()=>{
   	ipcRenderer.send("minimize")
   },
-axios: (config) => {
-  return ipcRenderer.invoke("axios", config)
-}
+  axios: (config) => {
+    return ipcRenderer.invoke("axios", config)
+  },
+  drag:(opt)=>{
+    ipcRenderer.invoke('drag',opt)
+  }
 }
 
 
