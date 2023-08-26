@@ -15,8 +15,11 @@ const api = {
   writesub:(sub)=>{
   	ipcRenderer.send("writesub",sub)
   },
-  cmd:()=>{
-  	return ipcRenderer.invoke("cmd")
+  hide:()=>{
+  	ipcRenderer.send("hide")
+  },
+  minimize:()=>{
+  	ipcRenderer.send("minimize")
   },
 }
 

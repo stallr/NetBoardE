@@ -16,12 +16,12 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 const routes = [
   { path: '/cart', component:Cart},
-  { path: '/index', component:Index},
+  { path: '/', component:Index},
   { path: '/nodes', component:Nodes},
   { path: '/orders', component:Orders},
   { path: '/profile', component:Profile},
   { path: '/login', component:Login},
-  { path: '/', component:Profile},
+  { path: '/index', component:Index},
 ]
 
 const router = createRouter({

@@ -3,7 +3,7 @@
 	class="el-menu-vertical"
 	background-color="#fff"
 	text-color="#000"
-	default-active="profile"
+	default-active="index"
 	router
 	>
 		<item index="index" text="控制面板"><Odometer /></item>
@@ -19,7 +19,6 @@
 	import item from "./item.vue"
 	import implement from '../../v2board/implement.js'
 	import {useUserStore} from "../../store/UserStore.js"
-  import axios from 'axios'
 	const UserStore=useUserStore();
 	await implement.Init(UserStore)
 	await implement.getSub(UserStore);

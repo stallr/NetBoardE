@@ -1,38 +1,44 @@
 <script setup>
 import logo from "./components/app/logo.vue"
-import leftmenu from "./components/app/menu.vue"	
-import toolbar from "./components/app/toolbar.vue"	
+import leftmenu from "./components/app/menu.vue"
+import toolbar from "./components/app/toolbar.vue"
+import controllbtn from "./components/app/controllBtn.vue"
 import error from "./components/error.vue"
-import login from "./components/login.vue"	
-import {ref} from 'vue'
-const RequestError = ref({"status":false,"reason":"","isLogin":true})
+import login from "./components/login.vue"
+import {ref,reactive} from 'vue'
+const RequestError = reactive({"status":false,"reason":"","isLogin":true})
 window.addEventListener("clashCommunicateError",(e)=>{
 	console.log("clashCommunicateError",e)
 })
 window.addEventListener("apiCommunicateError",(e)=>{
-	RequestError.value.status = true;
+  console.log("apiCommunicateError")
+	RequestError.status = true;
 	if (e.e.response) {
-		RequestError.value.reason = e.e.response.data.message;
-		RequestError.value.isLogin = false;
+		RequestError.reason = e.e.response.data.message;
+		RequestError.isLogin = false;
 	} else if (e.e.request) {
-	  RequestError.value.reason = "请求已经成功发起，但没有收到响应";
+	  RequestError.reason = "请求已经成功发起，但没有收到响应";
 	} else {
-		RequestError.value.reason ="发送请求时出了点问题";
+		RequestError.reason ="发送请求时出了点问题";
 	}
 })
 
 </script>
 
 <template>
-  <div class="common-layout" v-if="!RequestError.status">
+
+ <div class="common-layout" v-show="!RequestError.status">
     <el-container>
       <el-aside >
 		  <logo></logo>
 		  <Suspense><leftmenu></leftmenu></Suspense>
-		  <img class="gura" src="/src/assets/GuraAprilfoolL2D.jpg" />	
+		  <img class="gura" src="/src/assets/GuraAprilfoolL2D.jpg" />
 	  </el-aside>
       <el-container>
-		<el-header><toolbar></toolbar></el-header>
+		<el-header>
+     <controllbtn></controllbtn>
+      <toolbar></toolbar>
+      </el-header>
         <el-main class="appmain">
 			<router-view ></router-view>
 		</el-main>
@@ -61,9 +67,9 @@ window.addEventListener("apiCommunicateError",(e)=>{
     display: flex;
     justify-content: center;
     align-items: center;
-	
+
   }
-  
+
   .el-footer {
     background-color: var(--el-color-primary-light-7);
     color: var(--el-text-color-primary);
@@ -74,6 +80,8 @@ window.addEventListener("apiCommunicateError",(e)=>{
 	position: relative;
 	--el-header-padding: 0 0;
 	background-color: #fff;
+  display: flex;
+  flex-direction: column;
 	}
 
   .el-aside {
@@ -97,5 +105,5 @@ window.addEventListener("apiCommunicateError",(e)=>{
 
 
 }
- 
+
 </style>
