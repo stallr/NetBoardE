@@ -4,3 +4,4 @@ out
 *.log*
 .vscode
 resources/config.yaml
+resources/cache.db

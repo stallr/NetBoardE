@@ -19,6 +19,7 @@ function getConfig(){
 }
 
 function writeSub(suburl){
+  console.log(suburl,"sub")
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
@@ -35,6 +36,8 @@ function writeSub(suburl){
     clashconfig['mixed-port'] = 17890;
     // clashconfig['secret'] = "518c9615-8b62-4f15-af0d-a14e7389acb3";
     fs.writeFileSync(file,YAML.stringify(clashconfig));
+  }).catch((e)=>{
+    console.log(e);
   })
 
 }
