@@ -7,8 +7,8 @@ const createWindow = ()=>{
   const mainWindow = new BrowserWindow({
     width: 1020,
     height: 690,
-    frame:true,
-    autoHideMenuBar: false,
+    frame:false,
+    autoHideMenuBar: true,
     icon:getResource("netboard.png"),
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),

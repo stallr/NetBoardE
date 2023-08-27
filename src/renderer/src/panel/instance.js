@@ -9,7 +9,7 @@ const instance = axios.create({
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
     Accept: "application/json",
-    Authorization: localStorage.getItem("Authorization") || undefined
+    Authorization: localStorage.getItem("Authorization") || null
   },
   timeout: 5000
 });
