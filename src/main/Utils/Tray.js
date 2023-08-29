@@ -13,7 +13,7 @@ const createTray = (mainWindow)=>{
           createWindow();
         }
       } },
-    { label: '退出应用', role: 'quit',click:()=>{ app.quit()} },
+    { label: '退出应用', role: 'quit',click:()=>{stopServer(); app.quit()} },
   ])
 
   tray.setContextMenu(contextMenu)

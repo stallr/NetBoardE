@@ -5,3 +5,4 @@ out
 .vscode
 resources/config.yaml
 resources/cache.db
+resources/Rules

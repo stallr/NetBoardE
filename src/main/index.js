@@ -16,6 +16,7 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
+  stopServer();
   const mainWindow = createWindow();
   app.on('activate', () =>{
     if (BrowserWindow.getAllWindows().length === 0){
