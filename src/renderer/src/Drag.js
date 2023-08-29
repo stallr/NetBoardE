@@ -18,7 +18,6 @@ class Drag{
     this.pagey = e.pageY;
     this.w =  window.outerWidth;
     this.h = window.outerHeight;
-    console.log(this.w, this.h )
     const mousemovecall = this.mouseMove.bind(this);
     this.body.addEventListener('mousemove',mousemovecall)
     this.body.addEventListener('mouseup',()=>{

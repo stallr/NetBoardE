@@ -17,7 +17,6 @@ const instance = axios.create({
 });
 // Add authorization header to every request
 instance.interceptors.request.use(async (config) => {
-	console.log(config)
   if(!config.baseURL){
     config.baseURL = await getBase();
   }

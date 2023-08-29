@@ -22,12 +22,12 @@ import { storeToRefs } from "pinia"
 	var timer;
 	// 启动定时器函数
 	function startTimer() {
-	  if (!timer) {
+	  if (!CoreStore.timer) {
 		CoreStore.timepan = "00:00:00"
 	    var hours = 0;
 	    var minutes = 0;
 	    var seconds = 0;
-	    timer = setInterval(function() {
+	    CoreStore.timer = setInterval(function() {
 	      seconds++;
 	      if (seconds >= 60) {
 	        seconds = 0;
@@ -44,8 +44,8 @@ import { storeToRefs } from "pinia"
 
 	// 关闭定时器函数
 	function stopTimer() {
-	  clearInterval(timer);
-	  timer = null;
+	  clearInterval(CoreStore.timer);
+	  CoreStore.timer = null;
 	}
 
 	// 将时间格式化为 HH:MM:SS 格式
@@ -59,7 +59,7 @@ import { storeToRefs } from "pinia"
 	}
 	const core = ()=>{
 		if(CoreStore.start){
-			console.log("关闭内核")
+			console.log("关闭内核");
 	     window.api.stop();
 			stopTimer();// 关闭定时器
 		}else{

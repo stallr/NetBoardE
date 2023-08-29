@@ -1,7 +1,7 @@
 <template>
 	<div class="slickList">
 		<div class="slickStack">
-			<el-image src="/src/assets/noticebg.jfif" fit="cover"></el-image>
+			<el-image src="../../src/assets/noticebg.min.jpg" fit="cover"></el-image>
 			<el-container class="notice">
 				<h1>通告</h1>
 				<p>2023/07/07</p>
