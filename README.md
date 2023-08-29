@@ -41,9 +41,7 @@ And dont forget to write down your panel in src/renderer/config.json.
 
 ```
 
-if you are metron, please rename" src/renderer/components/metron" to "src/renderer/components/panel".
-
-if you are v2board please rename" src/renderer/components/v2board " to "src/renderer/components/panel".
+The default configuration is adjusted for v2board, but if you are metron, please rename" src/renderer/src/metron" to "src/renderer/src/panel" and replace the files in it.
 
 ### Install
 
