@@ -1,10 +1,8 @@
 # Netboard
 
-A WindowGUI based on Clash and Electron.
+A v2board and sspanel client based on Clash and Electron.
 
 An Electron application with Vue,Pinia,VueRouter and Elemenet-Plus.
-
-Support V2board and Metron.
 
 ![image-20230826105850963](README.assets/image-20230826105850963.png)
 
@@ -15,6 +13,12 @@ Here is the picture of netboard.
 Telegram:https://t.me/TalkToJshi
 
 In addition to the above contact information, there is no others.
+
+**凡是询问项目如何搭建、安装、使用,尤其是英文看不懂等问题，请自觉离开本项目。**
+
+## Donate
+
+Tron(波场):TTTTTTLuVcPQdCsYJuAa13Sc4527wYCZ4D
 
 ## IDE Setup
 
